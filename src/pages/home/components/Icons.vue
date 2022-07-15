@@ -1,8 +1,54 @@
 <template>
   <div class="icons">
     <div class="icon" >
-
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
     </div>
+    <div class="icon" >
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
+    </div>
+    <div class="icon" >
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
+    </div>
+    <div class="icon" >
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
+    </div>
+    <div class="icon" >
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
+    </div>
+    <div class="icon" >
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
+    </div>
+    <div class="icon" >
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
+    </div>
+    <div class="icon" >
+      <div class="icon-img">
+        <img  class="icon-imgcontent" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png" alt="">
+      </div>
+       <p class="icon-desc">热门景点</p>
+    </div>
+   
   </div>
 </template>
 
@@ -13,15 +59,38 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '~@/assets/styles/varibles.styl';
     .icons
         overflow: hidden
         height :0
         padding-bottom: 50%
-        background-color:#EEE
         .icon
+            position relative
+            overflow: hidden
             float: left
             width 25%
             padding-bottom: 25%
-            background-color black
+            height 0
+            .icon-img
+              position absolute
+              top: 0
+              left: 0
+              right: 0
+              bottom: .44rem
+              box-sizing:border-box
+              padding 0.1rem 
+              .icon-imgcontent
+                height: 100%
+                display:block
+                margin:0 auto
+            .icon-desc
+              position absolute
+              bottom 0
+              left 0
+              right 0
+              height .44rem
+              line-height: .44rem
+              color:$darkTextColor
+              text-align center
 
 </style>
