@@ -6,6 +6,7 @@
     <home-swiper></home-swiper>
     <home-icons></home-icons>
     <home-recommend></home-recommend>
+    <home-weekend></home-weekend>
    </div>
     
 </template>
@@ -15,6 +16,8 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
+import HomeWeekend from './components/Weekend'
+import axios from 'axios'
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name:'Home',
@@ -26,8 +29,21 @@ export default {
         // eslint-disable-next-line vue/no-unused-components
         HomeIcons,
         // eslint-disable-next-line vue/no-unused-components
-        HomeRecommend
+        HomeRecommend,
+        HomeWeekend
         
+    },
+    methods:{
+        getHomeInfo(){
+            axios.get('')
+            .then(this.getHomeInfoSucc)
+        },
+        getHomeInfoSucc(res){
+            console.log(res);
+        }
+    },
+    mounted (){
+        this.getHomeInfo()
     }
 }
 </script>
