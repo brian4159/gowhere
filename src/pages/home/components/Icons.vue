@@ -85,10 +85,14 @@ export default {
 @import '~@/assets/styles/varibles.styl';
 @import '~@/assets/styles/mixins.styl';
     .icons   >>> .swiper-container
-       
+    .icons
+
         height :0
         padding-bottom: 50%
-      .icon
+
+      .icons
+        margin-top: .1rem
+        .icon
             position relative
             overflow: hidden
             float: left
