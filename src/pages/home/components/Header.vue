@@ -4,25 +4,30 @@
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input">
-       <span class="iconfont">&#xe632;</span>
-      输入城市/景点/主题</div>
-      <router-link to="/city">
-    <div class="header-right">城市
-       <span class="iconfont arrow-icon">&#xe64a;</span>
+      <span class="iconfont">&#xe632;</span>
+      输入城市/景点/游玩主题
     </div>
+    <router-link to='/city'>
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
     </router-link>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-    name:'HomeHeader'
+  name: 'HomeHeader',
+  computed: {
+    ...mapState(['city'])
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/assets/styles/varibles.styl';
-
+  @import '~styles/varibles.styl'
   .header
     display: flex
     line-height: $headerHeight
@@ -53,7 +58,4 @@ export default {
       .arrow-icon
         margin-left: -.04rem
         font-size: .24rem
-
-
-
 </style>

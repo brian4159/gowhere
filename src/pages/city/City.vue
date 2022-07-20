@@ -1,29 +1,63 @@
-<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-<div>
-  <city-header></city-header>
-  <city-search></city-search>
-  <city-list></city-list>
-</div>
+  <div>
+    <city-header></city-header>
+    <city-search :cities="cities"></city-search>
+    <city-list
+      :cities="cities"
+      :hot="hotCities"
+      :letter="letter"
+    ></city-list>
+    <city-alphabet
+      :cities="cities"
+      @change="handleLetterChange"
+    ></city-alphabet>
+  </div>
 </template>
 
 <script>
-
-// eslint-disable-next-line no-unused-vars
-import CityHeader from './components/Header.vue'
-import CitySearch from './components/Search.vue'
-import CityList from './components/List.vue'
+import axios from 'axios'
+import CityHeader from './components/Header'
+import CitySearch from './components/Search'
+import CityList from './components/List'
+import CityAlphabet from './components/Alphabet'
 export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name:'City',
-    components:{
-        CityHeader,
-        CitySearch,
-        CityList
+  name: 'City',
+  components: {
+    CityHeader,
+    CitySearch,
+    CityList,
+    CityAlphabet
+  },
+  data () {
+    return {
+      cities: {},
+      hotCities: [],
+      letter: ''
     }
+  },
+  methods: {
+    getCityInfo () {
+      axios.get('/api/city.json')
+        .then(this.handleGetCityInfoSucc)
+    },
+    handleGetCityInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.cities = data.cities
+        this.hotCities = data.hotCities
+      }
+    },
+    handleLetterChange (letter) {
+      this.letter = letter
+    }
+  },
+  mounted () {
+    this.getCityInfo()
+  }
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
 
 </style>
